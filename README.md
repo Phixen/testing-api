@@ -1,11 +1,18 @@
 # Proposal template
 ## 1. Contact details
+
 Full name:
+
 Country:
+
 Time zone:
+
 Email:
+
 Github ID:
+
 Personal blog (optional):
+
 Twitter/LinkedIn/others:
 
 ## 2. GSOC information
