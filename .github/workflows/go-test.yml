@@ -1,0 +1,29 @@
+name: 'Test'
+on: 
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for actions/upload-pages-artifact
+      pages: write     # Required for actions/deploy-pages
+      id-token: write  # Required for actions/deploy-pages
+      pull-requests: write
+    steps:
+     - uses: actions/checkout@v4
+     - uses: actions/checkout@v4
+     - name: Start Database
+       run: |
+         docker-compose up -d
+     - name: 'Report Coverage'
+       uses: sonichigo/get-cov@main
+       with: 
+         coverage-file: test-file
+         coverage-threshold: 65
+         token: ${{ github.token }}
